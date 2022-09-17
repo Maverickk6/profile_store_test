@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+ {% block content %}
+
+
+<nav class="flex px-[30px] w-full">
+  <ul class="flex justify-between w-full px-[200px] py-[20px]">
+    <li><a href="{% url 'index' %}" class="text-[18px] text-blue-600 text-decoration-line: underline">Home</a></li>
+    <div class="flex w-[180px] justify-between">
+      <li><a href="{% url 'signup' %}" class="text-[18px] text-blue-600 text-decoration-line: underline">Register</a></li>
+      <li><a href="{% url 'users' %}" class="text-[18px] text-blue-600 text-decoration-line: underline">View Users</a></li>
+    </div>
+  </ul>
+</nav>
+<header class="w-full p-[15px] my-[10px]">
+  <h1 class="text-4xl text-center">Welcome to User Profile Repository</h1>
+</header>
+<main class="flex">
+  <div class="p-6 bg-gray-400 w-[350px] text-center rounded-md mx-[30px]">
+    <p class="text-xl mb-[10px]">
+      To Include your details,
+    </p>
+    <p>
+      Click <span><a class="text-blue-800" href="{% url 'signup' %}">here</a></span>
+    </p>
+  </div>
+  <div class="p-6 bg-gray-400 w-[350px] text-center rounded-md mx-[30px]">
+    <p class="text-xl mb-[10px]">
+      To view the list,
+    </p>
+    <p>
+      Click <span><a class="text-blue-800" href="{%url 'users' %}">here</a></span>
+    </p>
+  </div>
+</main>
+
+
+
+{% endblock %} 
+
+
+
+{% comment %}
+<form>
+  {% csrf_token %}
+  <div class="m-[10px]">
+    <input />
+  </div>
+  <div class="m-[10px]">
+    <input />
+  </div>
+</form>
+{% endcomment %}

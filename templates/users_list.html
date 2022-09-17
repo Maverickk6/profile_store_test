@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<a class="mt-[20px] text-xl text-blue-700" href="{% url 'index' %}">Back To Home</a>
+<p class="text-4xl mt-[20px] mb-[20px]">Users</p>
+
+<div class="px-[100px] py-[50px] bg-[#BBB8B2] w-full">
+  <div class="w-full bg-[#b6a095]">
+  <table class="w-full mx-[120px] justify-between items-center">
+    <tr class="space-x-[]">
+      <th class="p-[8px] text-xl text-left">Firstname</th>
+      <th class="p-[8px] text-xl text-left">Lastname</th>
+      <th class="p-[8px] text-xl text-left">Email</th>
+    </tr>
+    {% for user in users %}
+    <tr class="">
+      <td class="w-[50px] p-[8px] text-left">{{ user.first_name }}</td>
+      <td class="w-[50px] p-[8px] text-left">{{ user.last_name }}</td>
+      <td class="w-[50px] p-[8px] text-left">{{ user.email }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+</div>
+{% endblock %}

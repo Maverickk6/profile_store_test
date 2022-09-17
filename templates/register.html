@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block content %}
+<a class="mt-[20px] text-xl text-blue-700"href="{% url 'index' %}">Back To Home</a>
+<h1 class="my-[40px] text-4xl">Fill in your details here</h1>
+
+<div class="text-red-600">
+  {% for message in messages %}
+  <h5>{{ message }}</h5>
+  {% endfor %}
+</div>
+<form
+  action=""
+  method="POST"
+  class="my-[10px] w-[350px] h-[400px] rounded-lg bg-gray-400 flex flex-col justify-center p-[30px]"
+>
+  {% csrf_token %}
+  <input
+    type="text"
+    name="firstname"
+    placeholder="Firstname"
+    class="bg-gray-200 mb-4 shadow-none rounded-lg"
+    style="border: 1px solid #d3d5d8 !important"
+  />
+  <input
+    type="text"
+    name="lastname"
+    placeholder="Lastname"
+    class="bg-gray-200 mb-4 shadow-none rounded-lg"
+    style="border: 1px solid #d3d5d8 !important"
+  />
+  <input
+    type="text"
+    name="username"
+    placeholder="Username"
+    class="bg-gray-200 mb-4 shadow-none rounded-lg"
+    style="border: 1px solid #d3d5d8 !important"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    class="bg-gray-200 mb-2 shadow-none rounded-lg"
+    style="border: 1px solid #d3d5d8 !important"
+  />
+  <button
+    type="submit"
+    class="bg-gradient-to-br from-blue-500 py-[6px] mt-[20px] rounded-md text-white text-xl to-blue-400 w-[150px] self-center"
+  >
+    Add Details
+  </button>
+</form>
+
+{% endblock %}
